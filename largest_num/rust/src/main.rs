@@ -1,7 +1,7 @@
 use std::env;
-use std::path::Path;
-use std::io::{BufRead, BufReader};
 use std::fs::File;
+use std::io::{BufRead, BufReader};
+use std::path::Path;
 
 fn main() {
     let path = read_args();
@@ -12,7 +12,7 @@ fn main() {
 fn read_args() -> String {
     let args: Vec<String> = env::args().collect();
     if args.len() > 1 {
-        return args[1].clone()
+        return args[1].clone();
     }
     println!("Specify a file path");
     std::process::exit(1);
@@ -27,10 +27,10 @@ fn read_numbers(path: &String) -> Result<Vec<i32>, &'static str> {
     for line in file_reader.lines() {
         match line {
             Err(reason) => panic!("{:?}", reason),
-            Ok(string)  => match string.trim().parse::<i32>() {
+            Ok(string) => match string.trim().parse::<i32>() {
                 Err(reason) => panic!(reason),
-                Ok(number) => vector.push(number)
-            }
+                Ok(number) => vector.push(number),
+            },
         }
     }
     Ok(vector)
@@ -41,7 +41,7 @@ fn largest_num(numbers: Vec<i32>) {
     for i in numbers.iter() {
         if &largest < i {
             largest = *i;
-        } 
+        }
     }
     println!("{}", largest);
 }
