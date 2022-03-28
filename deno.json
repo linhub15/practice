@@ -1,0 +1,5 @@
+{
+  "tasks": {
+    "run:crawler": "deno run --unstable -A 4_crawler/main.ts http://localhost:1313/"
+  }
+}
